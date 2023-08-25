@@ -1,9 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { app, BrowserWindow, ipcMain, Menu, shell } from 'electron';
+import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import Store from 'electron-store';
-import { isDebug, getAssetsPath, getHtmlPath, getPreloadPath, installExtensions } from './utils';
-import menu from './menu';
+import { getAssetsPath, getHtmlPath, getPreloadPath } from './utils';
 import './updater';
 
 function createWindow() {
@@ -12,7 +11,7 @@ function createWindow() {
     width: 1100,
     height: 750,
     webPreferences: {
-      devTools: isDebug,
+      devTools: false,
       preload: getPreloadPath('preload.js'), // 👈 Don't USE PRELOAD.JS IF YOUR USING NODE IN RENDERER PROCESS
       // nodeIntegration: true, // 👈 NODE.JS WILL AVAILABLE IN RENDERER
       // contextIsolation: false, // 👈 ENABLE THIS FOR NODE INTEGRATION IN RENDERER
@@ -20,18 +19,16 @@ function createWindow() {
   });
 
   mainWindow.loadURL(getHtmlPath('index.html'));
-
-  /* MENU BUILDER */
-  Menu.setApplicationMenu(menu);
+  mainWindow.setMenu(null);
 
   /* AUTO UPDATER INVOKE */
   autoUpdater.checkForUpdatesAndNotify();
 
   /* DEBUG DEVTOOLS */
-  if (isDebug) {
-    mainWindow.webContents.openDevTools(); // ELECTRON DEVTOOLS
-    installExtensions(); // REACT DEVTOOLS INSTALLER
-  }
+  // if (isDebug) {
+  //   mainWindow.webContents.openDevTools(); // ELECTRON DEVTOOLS
+  //   installExtensions(); // REACT DEVTOOLS INSTALLER
+  // }
 
   /* URLs OPEN IN DEFAULT BROWSER */
   mainWindow.webContents.setWindowOpenHandler((data) => {

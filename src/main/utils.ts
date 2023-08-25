@@ -1,13 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { app } from 'electron';
-import installExtension, {
-  REACT_DEVELOPER_TOOLS,
-  REDUX_DEVTOOLS,
-} from 'electron-devtools-installer';
+import installExtension, { REDUX_DEVTOOLS } from 'electron-devtools-installer';
 import path from 'path';
 import { port } from '../../DevConfig.json';
-
-const isDebug = process.env.ELECTRON_ENV === 'debug';
 
 function getAssetsPath(fileName: string) {
   if (process.env.NODE_ENV === 'production' && app.isPackaged === true) {
@@ -35,7 +30,7 @@ function getPreloadPath(Name: string) {
 }
 
 function installExtensions() {
-  const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
+  const extensions = [REDUX_DEVTOOLS];
   extensions.forEach((Name) => {
     installExtension(Name) // eslint-disable-next-line no-console
       .then((name) => console.log(`${name} Extension Added`))
@@ -44,4 +39,4 @@ function installExtensions() {
   });
 }
 
-export { isDebug, getAssetsPath, getHtmlPath, getPreloadPath, installExtensions };
+export { getAssetsPath, getHtmlPath, getPreloadPath, installExtensions };

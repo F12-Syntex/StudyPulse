@@ -1,7 +1,7 @@
 {
-  "name": "vite-electron-react-boilerplate",
+  "name": "hanseido",
   "version": "1.0.0",
-  "description": "Next Generation Tooling for Building Robust Desktop Apps❤️",
+  "description": "Retrospective revision time table.",
   "keywords": [
     "Electron",
     "React",
@@ -18,20 +18,15 @@
     "Hot reload",
     "Vscode debug"
   ],
-  "homepage": "https://github.com/stackoutput-com/vite-electron-react-boilerplate#readme",
+  "homepage": "https://github.com/F12-Syntex/Hanseidoe#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stackoutput-com/vite-electron-react-boilerplate.git"
+    "url": "git+https://github.com/F12-Syntex/Hanseido.git"
   },
   "bugs": {
-    "url": "https://github.com/stackoutput-com/vite-electron-react-boilerplate/issues"
+    "url": "https://github.com/F12-Syntex/Hanseido/issues"
   },
   "license": "MIT",
-  "author": {
-    "name": "Ajay Kanniyappan",
-    "email": "ajaykanniyappan@gmail.com",
-    "url": "https://ajaykanniyappan.com"
-  },
   "main": "app/dist/main/main.js",
   "scripts": {
     "build:debug": "npm run clean:build && npm run debug && electron-builder build",
