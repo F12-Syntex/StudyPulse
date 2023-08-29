@@ -1,0 +1,19 @@
+.LoginPage {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #161718;
+}
+
+.LoginPage-login-container{
+  width: 60%;
+  height: 60%;
+}
+
+.LoginPage-grid{
+  color: white;
+}
