@@ -1,0 +1,27 @@
+$navbar-height: 40px;
+
+.navbar-container {
+  width: 100vw;
+  height: $navbar-height;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: #161718;
+}
+
+.navbar-buttons {
+  width: 100px;
+  height: 100%;
+}
+
+.navbar-button-group {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-button {
+  height: 100%;
+  width: 50%;
+}

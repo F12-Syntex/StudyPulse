@@ -11,7 +11,7 @@ function createWindow() {
     width: 1545,
     height: 1048,
     webPreferences: {
-      devTools: false,
+      devTools: true,
       preload: getPreloadPath('preload.js'), // 👈 Don't USE PRELOAD.JS IF YOUR USING NODE IN RENDERER PROCESS
       // nodeIntegration: true, // 👈 NODE.JS WILL AVAILABLE IN RENDERER
       // contextIsolation: false, // 👈 ENABLE THIS FOR NODE INTEGRATION IN RENDERER
@@ -19,7 +19,7 @@ function createWindow() {
   });
 
   mainWindow.loadURL(getHtmlPath('index.html'));
-  mainWindow.setMenu(null);
+  mainWindow.setMenuBarVisibility(false);
 
   mainWindow.addListener('close', () => {
     mainWindow.destroy();

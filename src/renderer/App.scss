@@ -1,0 +1,15 @@
+@import './Components/nav-bar/NavBar.scss';
+
+:root {
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.content-pane {
+  width: 100vw;
+  height: calc(100vh - $navbar-height);
+}

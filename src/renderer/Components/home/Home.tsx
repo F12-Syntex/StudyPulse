@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Button, styled } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Button, styled } from '@mui/material';
 import './Home.scss';
+import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
 
 const NewButton = styled(Button)({
   boxShadow: 'none',
@@ -37,11 +38,21 @@ const NewButton = styled(Button)({
   },
 });
 
+function addNewSubject(navigate: NavigateFunction) {
+  navigate('/add-subject');
+}
+
 function Homepage() {
+  const navigate = useNavigate();
+
   return (
     <div className="homepage-container">
       <div className="homepage-header">
-        <NewButton variant="contained" endIcon={<ExpandMoreIcon />}>
+        <NewButton
+          variant="contained"
+          endIcon={<ExpandMoreIcon />}
+          onClick={() => addNewSubject(navigate)}
+        >
           New
         </NewButton>
       </div>

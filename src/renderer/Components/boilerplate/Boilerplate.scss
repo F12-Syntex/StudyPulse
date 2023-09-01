@@ -1,0 +1,10 @@
+@import '../nav-bar/NavBar.scss';
+
+.boilerplate-container {
+  width: 100vw;
+  height: calc(100vh - $nav-bar-height);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
