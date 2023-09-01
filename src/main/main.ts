@@ -8,8 +8,8 @@ import './updater';
 function createWindow() {
   const mainWindow = new BrowserWindow({
     icon: getAssetsPath('icon.ico'),
-    width: 1200,
-    height: 800,
+    width: 1545,
+    height: 1048,
     webPreferences: {
       devTools: false,
       preload: getPreloadPath('preload.js'), // 👈 Don't USE PRELOAD.JS IF YOUR USING NODE IN RENDERER PROCESS
@@ -20,6 +20,24 @@ function createWindow() {
 
   mainWindow.loadURL(getHtmlPath('index.html'));
   mainWindow.setMenu(null);
+
+  mainWindow.addListener('close', () => {
+    mainWindow.destroy();
+  });
+
+  // mainWindow.addListener('resize', () => {
+  //   const dimensions = [1920, 1200];
+  //   const [width, height] = mainWindow.getSize();
+
+  //   const [widthRatio, heightRatio] = [width / dimensions[0], height / dimensions[1]];
+  //   const [widthRatioPercent, heightRatioPercent] = [
+  //     Math.round(widthRatio * 100) / 100,
+  //     Math.round(heightRatio * 100) / 100,
+  //   ];
+
+  //   console.log(widthRatioPercent + 'vw ' + heightRatioPercent + 'vh');
+  //   console.log(mainWindow.getSize());
+  // });
 
   /* AUTO UPDATER INVOKE */
   autoUpdater.checkForUpdatesAndNotify();

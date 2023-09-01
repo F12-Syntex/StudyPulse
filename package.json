@@ -1,5 +1,5 @@
 {
-  "name": "hanseido",
+  "name": "studypulse",
   "version": "1.0.0",
   "description": "Retrospective revision time table.",
   "keywords": [
@@ -18,13 +18,13 @@
     "Hot reload",
     "Vscode debug"
   ],
-  "homepage": "https://github.com/F12-Syntex/Hanseidoe#readme",
+  "homepage": "https://github.com/F12-Syntex/StudyPulse#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/F12-Syntex/Hanseido.git"
+    "url": "git+https://github.com/F12-Syntex/StudyPulse.git"
   },
   "bugs": {
-    "url": "https://github.com/F12-Syntex/Hanseido/issues"
+    "url": "https://github.com/F12-Syntex/StudyPulse/issues"
   },
   "license": "MIT",
   "main": "app/dist/main/main.js",
@@ -48,13 +48,14 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.7",
     "@mui/material": "^5.14.7",
     "electron-log": "^4.4.8",
     "electron-store": "^8.1.0",
     "electron-updater": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.3"
+    "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
     "@types/detect-port": "^1.3.2",
