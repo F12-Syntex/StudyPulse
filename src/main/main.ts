@@ -12,9 +12,9 @@ function createWindow() {
     height: 1048,
     webPreferences: {
       devTools: true,
-      preload: getPreloadPath('preload.js'), // 👈 Don't USE PRELOAD.JS IF YOUR USING NODE IN RENDERER PROCESS
-      // nodeIntegration: true, // 👈 NODE.JS WILL AVAILABLE IN RENDERER
-      // contextIsolation: false, // 👈 ENABLE THIS FOR NODE INTEGRATION IN RENDERER
+      // preload: getPreloadPath('preload.js'), // 👈 Don't USE PRELOAD.JS IF YOUR USING NODE IN RENDERER PROCESS
+      nodeIntegration: true, // 👈 NODE.JS WILL AVAILABLE IN RENDERER
+      contextIsolation: false, // 👈 ENABLE THIS FOR NODE INTEGRATION IN RENDERER
     },
   });
 
@@ -71,6 +71,7 @@ ipcMain.on('set', (_event, key, val) => {
   console.log(`Electron Store Example: key: ${key}, value: ${val}`);
   store.set(key, val);
 });
+
 ipcMain.on('get', (event, val) => {
   // eslint-disable-next-line no-param-reassign
   event.returnValue = store.get(val);

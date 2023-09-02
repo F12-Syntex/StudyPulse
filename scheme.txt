@@ -1,0 +1,16 @@
+data:
+  version : integer
+  subjects : {
+      key : {
+        description : string
+        sub_topics {
+          key : {
+            sessions: {
+              key : date {
+                confidence : integer
+              }
+            }
+          }
+        }
+      }
+  }
